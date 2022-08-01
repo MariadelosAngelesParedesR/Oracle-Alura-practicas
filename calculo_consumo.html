@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <h3>¿Alcohol o gasolina?</h3>
+
+    <script>
+        function saltarLinea() {
+
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<br>");
+
+        }
+
+        function imprimir(frase) {
+            document.write(frase);
+            saltarLinea()
+        }
+
+        imprimir("hola amigo y amiga")
+
+        var tanque = 40;
+        var camino = 480;
+
+        document.write(camino / tanque)
+        saltarLinea()
+
+    </script>
+
+    <script>
+        var tanque2 = 40;
+        var camino2 = 300;
+        var consumoDeGasolina = camino2 / tanque2;
+
+        document.write(camino2 / tanque2);
+        saltarLinea()
+
+
+        document.write("El consumo de gasolina es: " + consumoDeGasolina + " Kl/L");
+        saltarLinea()
+    </script>
+
+
+
+    <h1>Calcular IMC</h1>
+    <script>
+        peso = 75
+        altura = 164
+        imcMaria = (peso / (altura * altura));
+
+        imprimir("el imc: " + imcMaria);
+
+        // simplificado la función y haciendola más eficiente 
+
+        function calcularImc(peso, altura, nombre) {
+
+            imc = (peso / (altura * altura));
+            imprimir("El IMC calculado de " + nombre + " es " + imc)
+        }
+
+        calcularImc(72, 176, "Leomar José")
+        calcularImc(74, 164, "María")
+
+        // simplificado la función y haciendola más eficiente 
+
+        function calcularImc2(peso, altura) {
+
+            imc = (peso / (altura * altura));
+            return imc;
+        }
+
+        var imcMaria = calcularImc2(71, 1.65);
+        var imcLeo = calcularImc2(74, 1.63);
+
+        imprimir("El promedio del imc de Maria y Leo es: " + (imcMaria + imcLeo) / 2);
+
+        // simplificado la función y haciendola más eficiente 
+
+        function calcularImc2(peso, altura) {
+
+            return imc = (peso / (altura * altura));
+        }
+
+        imprimir("El promedio del imc de Maria y Leo es: " + (calcularImc2(71, 1.65) + calcularImc2(74, 1.63)) / 2);
+
+
+        nombre = prompt("informe su nombre");
+        pesoInformado = prompt(nombre + ", informe su peso");
+        alturaInformada = prompt(nombre + ", informe su altura");
+
+        imcCalculado = calcularImc2(pesoInformado,alturaInformada)
+
+        imprimir(nombre + ", su imc calculado es: "+ imcCalculado)
+
+        if (imcCalculado < 18.5){
+            imprimir("IMC bajo de lo recomendado");
+        }
+
+        if (imcCalculado >= 18.5 ){
+
+            if(imcCalculado < 25){
+
+            imprimir("IMC normal es lo recomendado");
+        }
+    }
+        if (imcCalculado >= 30){
+            imprimir("IMC considerado obecidad")
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
