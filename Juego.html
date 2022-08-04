@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
 <h3>Juego</h3>
 
@@ -26,14 +29,38 @@
         saltarLinea()
     }
 
-    var numeroPensado = Math.round(Math.random()*10);
-    var numeroLanzado = parseInt(prompt("ingrese un numero entre 0-10")); 
+    var numeroPensado = Math.round(Math.random() * 10);
+    var intentos = 3;
+    var contador = 1;
 
-    if(numeroPensado == numeroLanzado){
-        imprimir("usted acerto");
-    }
-    else{
-        imprimir("usted no acerto, el número pensado era " + numeroPensado);
+    while(contador <= intentos) {
+    
+    var numeroLanzado = parseInt(prompt("ingrese un numero entre 0-10"));
 
+    if (numeroPensado == numeroLanzado) {
+        alert("usted acertó, en el intento " + contador + " el número pensado era " + numeroPensado);
+        break;
     }
-    </script>
+    else {
+        alert("usted no acerto " + numeroPensado);
+    
+    }
+
+    contador++
+}
+
+if (numeroPensado == numeroLanzado) {
+        imprimir("usted acertó, en el intento " + contador + " el número pensado era " + numeroPensado);
+        
+    }
+    else {
+        imprimir("usted no acerto");
+    
+    }
+
+
+
+imprimir("Fin")
+
+    
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+   
+
+    <script>
+        function saltarLinea() {
+
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<br>");
+
+        }
+
+        function imprimir(frase) {
+            document.write(frase);
+            saltarLinea()
+        }
+        document.write("<h3>Contador de 2 en 2 hasta el 100</h3>");
+
+        var numeroInicio = 2;
+        var limite = 100
+
+        while (numeroInicio <= limite) {
+
+            imprimir(numeroInicio);
+            numeroInicio = numeroInicio + 2;
+        }
+        imprimir("FIN")
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
