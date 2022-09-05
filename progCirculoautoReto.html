@@ -1,0 +1,27 @@
+<html>
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");        
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0,0,600,400); 
+
+
+    var cuadro1 = "blue";
+    var cuadro2 = "green";
+    var cuadro3 = "red"
+    
+    function dibujarCuadro(color){
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(50 * 50);
+        pincel.fill();
+
+
+    }
+
+    
+
+</script>
+</html>

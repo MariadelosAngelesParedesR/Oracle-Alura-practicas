@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        var pantalla = document.querySelector("canvas");//esta conectando con la etiqueta HTML el que querySelecto
+        var pincel = pantalla.getContext("2d"); //contenido de la pantalla lanrgo y ancho, "d2 = a 2 Dimenciones"
+
+        pincel.fillStyle = "lightgrey"; //fillStyle es un propiedad y siempre se le debe pasar un argumento 
+        pincel.fillRect(0,0,600,400); // llenar el rectangu con "fillRect" es una función
+
+        pincel.fillStyle = "green"; //fillStyle es un propiedad y siempre se le debe pasar un argumento 
+        pincel.fillRect(0,0,200,400);
+
+        pincel.fillStyle = "red"; //fillStyle es un propiedad y siempre se le debe pasar un argumento 
+        pincel.fillRect(400,0,200,400);
+
+        pincel.fillStyle = "yellow"; //fillStyle es un propiedad y siempre se le debe pasar un argumento 
+        pincel.beginPath();//comenzar un nuevo camino 
+        pincel.moveTo(300,200); //moverse hacia la posición 
+        pincel.lineTo(200,400);
+        pincel.lineTo(400,400);
+        pincel.fill();
+
+
+        pincel.fillStyle = "blue"; //propiedades
+        pincel.beginPath();
+        pincel.arc(300,200,50,0,2*3.14); // colocar la circunferencia en el centro de rectangulo 
+        pincel.fill();
+
+
+
+    </script>
+</body>
+</html>

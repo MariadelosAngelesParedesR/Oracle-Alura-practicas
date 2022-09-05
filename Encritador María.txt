@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="/encriptador.js"></script>
+    <title>Encriptador</title>
+</head>
+
+<body>
+    <main>
+    <div class="container">
+       
+        <div class="logoA">
+        <img class="logo-img"src="img/Group 3.png" alt="Group 3.png">
+        </div>
+  
+    
+        <div class="derecho">
+            <div>
+                <label for="texto"></label>
+                <textarea class="texto" placeholder="Ingrese el Texto Aquí"></textarea>
+            </div>
+    
+            <section class="botones">
+                <img class="img+vector" src="/img/Vector.png" alt="">
+               <p class="vector">Solo letras minuscula y sin acentos</p>
+    
+                <button class="encriptar"  onclick="btnEncritar()">Encriptar</button>
+                <button class="desencriptador"   onclick="btnDesencriptar()">Desencriptar</button>
+            </section>
+        </div>
+        <div class="izquierdo">
+            <section class="muñeco">
+                <img class="imagen" src="img/Muñeco.png" alt="Muñeco">
+                <p class="mensaje">Ningún mensaje fue encontrado</p>
+                <label for="texto"></label>
+                <textarea class="ingresar"  placeholder="Ingresa el texto que desees encriptar o desencriptar"></textarea>
+                <button class="copiar" onclick="copiar()">Copiar</button>
+            </section>
+        </div>|
+
+
+        </div>
+    </main> 
+    <!-- <script src="/encriptador.js"></script>    -->
+  
+    
+</body>
+
+</html>
+
+
+
+...................................Fin de HTML..................................
+
+......................Inicio Css................................................. 
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #F3F5FC;
+    
+}
+
+.container {
+    margin: auto;
+    width: 960px;
+    height: 650px;
+    padding: 5px;
+    
+}
+
+.logoA {
+    
+    margin-top: 2%;
+    margin-left: 5%;
+    width: 95%;
+    float: inherit;
+    /* /* background-color: green;*/
+} 
+
+.derecho {
+    float: left;
+    width: 70%;
+    height: 70%;
+    /* background-color: #020f22;*/
+}
+
+.texto {
+    float: left;
+    margin-left: 10%;
+    margin-top: 10%;
+    width: 80%;
+    height: 80%;
+    color: #0A3871;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: #E5E5E5;
+}
+
+
+.botones {
+    /* background-image: url("/img/Vector.png"); */
+    float: right;
+    width: 42%;
+    height: auto;
+    /* background-color: antiquewhite; */
+    position: absolute;
+    top: 380px;
+    margin-left: 20px;
+    
+}
+.imgvector{
+   
+    margin-left: 160px; 
+    position: relative;
+    top: 38px;
+
+}
+.vector{
+    margin-left: 160px;   
+    }
+
+
+.encriptar{
+    padding-bottom: 24px;
+    width: 30%;
+    height: 60%;
+    border-radius: 24px;
+    margin-left: 15%;
+    background-color: #0A3871;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.desencriptador{
+    padding-bottom: 24px;
+    width: 30%;
+    height: 60%;
+    border-radius: 24px;
+    margin-left: 10%;
+    background-color:#D8DFE8;
+    color: #0A3871;
+    text-align: center;
+}
+
+.izquierdo {
+    float: right;
+    width: 30%;
+    height: 80%;
+    background-color:#FFFFFF;
+    border-radius: 14px;
+
+}
+
+.imagen {
+    margin-left: 2%;
+    margin-top: 20%;
+    width: 90%;
+    height: auto;
+}
+
+.mensaje {
+    margin-left: 15%;
+    margin-right: 5%;
+    text-align: center;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.ingresar{
+    float: left;
+    margin-left: 10%;
+    color: #0A3871;
+    width: 80%;
+    height: 60%;
+    border: none;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.copiar{
+  margin-left: 100px;
+  margin-top: 15px;
+  background-color: #D8DFE8;
+  color: #0A3871;
+  font-size: 16px;
+  border-radius: 14px;
+  padding: 19px;
+}
+
+.................................Fin de Css....................................
+
+..............................Inicio Js.........................................
+
+const inputTexto = document.querySelector(".texto");
+const inputMensaje = document.querySelector(".ingresar");
+
+
+// La letra "e" es convertida para "enter"
+// La letra "i" es convertida para "imes"
+// La letra "a" es convertida para "ai"
+// La letra "o" es convertida para "ober"
+// La letra "u" es convertida para "ufat"
+
+function btnEncritar(){
+    const textoEncriptado = encriptar(inputTexto.value)
+    mensaje.value = textoEncriptado;
+    mensaje.style.backgrounImage = "none"
+    inputTexto.value = ""
+
+}
+
+function encriptar(textoAEncriptar){
+    let codigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]]; 
+    // lista de Arays dentro de otro arays
+
+    textoAEncriptar = textoAEncriptar.toLowerCase();   //para que solo reciba letras minusculas
+
+    for(let i = 0; i < codigo.length; i++){                  //recorrido de i = indice
+        if(textoAEncriptar.includes(codigo[i][0])){
+            textoAEncriptar = textoAEncriptar.replaceAll  //repaso por el indice del array
+            (codigo[i][0], codigo[i][1])
+
+        }
+    }
+    return textoAEncriptar;
+
+    
+}
+
+...............................Js............................................
+
+
